@@ -1,6 +1,6 @@
 {
   "name": "balajs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A function for elements selection",
   "main": "./umd/bala.umd.js",
   "scripts": {

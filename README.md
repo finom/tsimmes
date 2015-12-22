@@ -3,7 +3,7 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 [![Join the chat at https://gitter.im/finom/bala](https://badges.gitter.im/finom/bala.svg)](https://gitter.im/finom/bala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-## A function for elements selection in 420 chars.
+## A function for elements selection in 408 chars.
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
@@ -23,7 +23,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e);return this};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]);
+$=function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]);
 </script>
 ```
 
@@ -44,7 +44,7 @@ And you can use it as a local variable in a script you make
         alert($('.my-selector').length);
     });
   // your code ends here
-})(window, function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e);return this};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]));
+})(window, function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]));
 ```
 
 Or install it via NPM
