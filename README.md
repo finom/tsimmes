@@ -2,7 +2,7 @@ bala.js
 ============
 
 
-## A function for elements selection in 373 chars.
+## A function for elements selection in 375 chars.
 
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
@@ -23,7 +23,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$ = (function(c,d,b){b=function(a,e){d.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((i=c.createElement(e||"q")).innerHTML=a,i.children):(e&&b(e)[0]||c).querySelectorAll(a):/f/.test(typeof a)?/c/.test(c.readyState)?a():c.addEventListener("DOMContentLoaded",a):a:d)};b.fn=b.prototype=d;b.one=function(a){return b(a,context)[0]};return b})(document,[]);
+$=(function(c,d,b){b=function(a,e){d.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((i=c.createElement(e||"q")).innerHTML=a,i.children):(e&&b(e)[0]||c).querySelectorAll(a):/f/.test(typeof a)?/c/.test(c.readyState)?a():c.addEventListener("DOMContentLoaded",a):a:d)};b.fn=b.prototype=d;b.one=function(a){return b(a,context)[0]};return b})(document,[]);
 </script>
 ```
 
