@@ -76,7 +76,7 @@
 		it('Allows to create plugins', function(ok, fail) {
 			var $tgt = $('*');
 			$.fn.plugin = function() {
-				$tgt === this ? ok() : fail;
+				$tgt === this ? ok() : fail();
 			};
 
 			$tgt.plugin();
