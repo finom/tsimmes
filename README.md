@@ -2,7 +2,7 @@ bala.js
 ============
 
 
-## A function for elements selection in 367 chars.
+## A function for elements selection in 373 chars.
 
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)

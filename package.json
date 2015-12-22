@@ -1,0 +1,25 @@
+{
+  "name": "bala",
+  "version": "0.1.0",
+  "description": "A function for elements selection",
+  "main": "umd/bala.umd.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/finom/bala.git"
+  },
+  "keywords": [
+    "jquery",
+    "dom",
+    "library",
+    "balalaika"
+  ],
+  "author": "Andrey Gubanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finom/bala/issues"
+  },
+  "homepage": "https://github.com/finom/bala#readme"
+}

@@ -6,7 +6,7 @@
 $.fn = $.prototype = fn;
 
 $.one = function(s) {
-  return $(s, context)[0];
+  return $(s, context)[0]||null;
 };
 
 return $;
