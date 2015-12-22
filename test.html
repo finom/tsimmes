@@ -1,8 +1,101 @@
 <html>
-  <head>
-    <title></title>
-    <meta content="">
-    <style></style>
-  </head>
-  <body></body>
+
+<head>
+	<script>
+		var frag = document.createDocumentFragment();
+
+		window.it = function(msg, callback) {
+			var div = document.createElement('div');
+
+			div.textContent = msg;
+
+			frag.appendChild(div);
+
+			callback(function() {
+				div.style.color = 'green';
+			}, function() {
+				div.style.color = 'red';
+			});
+		}
+
+		setTimeout(function() {
+			document.body.appendChild(frag);
+		}, 100);
+	</script>
+	<script src="bala.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/requirejs/2.1.22/require.min.js"></script>
+</head>
+
+<body>
+	<div class="test">
+		<div class="test-1"></div>
+	</div>
+
+	<script>
+		it('Allows to use DOM ready feature', function(ok, fail) {
+			var timeout = setTimeout(fail, 1000);
+			$(function() {
+				ok();
+				clearTimeout(timeout);
+			});
+		});
+
+		it('Converts array-like', function(ok, fail) {
+
+			var all = document.querySelectorAll('*'),
+				$all = $(all);
+
+			$all.length == all.length && all[0] == $all[0] ? ok() : fail();
+
+		});
+
+		it('Converts one element', function(ok, fail) {
+
+			var element = document.querySelector('*'),
+				$element = $(element);
+
+			$element[0] == element && $element.length == 1 ? ok() : fail();
+
+		});
+
+		it('Uses context', function(ok, fail) {
+			$('.test-1', '.test').length && !$('.test-xx', '.test').length ? ok() : fail();
+		});
+
+		it('Parses HTML', function(ok, fail) {
+			var $el = $('<div></div><span></span>');
+			$el.length == 2 && $el[0].tagName == 'DIV' && $el[1].tagName == 'SPAN' ? ok() : fail();
+		});
+
+		it('Parses contextual HTML', function(ok, fail) {
+			var $el = $('<td></td><td></td>', 'tr');
+			$el.length == 2 && $el[0].tagName == 'TD' && $el[1].tagName == 'TD' ? ok() : fail();
+		});
+
+		it('Allows to create plugins', function(ok, fail) {
+			var $tgt = $('*');
+			$.fn.plugin = function() {
+				$tgt === this ? ok() : fail;
+			};
+
+			$tgt.plugin();
+		});
+
+		it('Little test for $.one', function(ok, fail) {
+			$.one('.test').className == 'test' ? ok() : fail();
+		});
+
+		it('Works with AMD', function(ok, fail) {
+			var timeout = setTimeout(fail, 1000);
+			require(['umd/bala.umd.js'], function($) {
+				if($.one) {
+					ok();
+					clearTimeout(timeout);
+				}
+			});
+		});
+	</script>
+</body>
+
 </html>
