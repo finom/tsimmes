@@ -3,7 +3,7 @@ bala.js
 
 **UNDER DEVELOPMENT**
 
-## A function for elements selection in 375 chars.
+## A function for elements selection in 420 chars.
 
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
@@ -24,16 +24,14 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=(function(c,d,b){b=function(a,e){d.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((i=c.createElement(e||"q")).innerHTML=a,i.children):(e&&b(e)[0]||c).querySelectorAll(a):/f/.test(typeof a)?/c/.test(c.readyState)?a():c.addEventListener("DOMContentLoaded",a):a:d)};b.fn=b.prototype=d;b.one=function(a){return b(a,context)[0]};return b})(document,[]);
+$=function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e);return this};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]);
 </script>
 ```
 
 ```html
 <script>
     $(function() {
-        $('.my-selector').on('click', function() {
-            alert('I need my balalaika');
-        });
+        alert($('.my-selector').length);
     });
 </script>
 ```
@@ -44,12 +42,10 @@ And you can use it as a local variable in a script you make
 (function(win, $) {
     // your code starts here
     $(function() {
-        $('.my-selector').on('click', function() {
-            alert('I need my balalaika');
-        });
+        alert($('.my-selector').length);
     });
   // your code ends here
-})(window, function(c,d,b){b=function(a,e){d.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((i=c.createElement(e||"q")).innerHTML=a,i.children):(e&&b(e)[0]||c).querySelectorAll(a):/f/.test(typeof a)?/c/.test(c.readyState)?a():c.addEventListener("DOMContentLoaded",a):a:d)};b.fn=b.prototype=d;b.one=function(a){return b(a,context)[0]};return b}(document,[]));
+})(window, function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e);return this};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]));
 ```
 
 It's inherited from ``Array.prototype`` which means it has the same collection of methods.
@@ -157,7 +153,7 @@ In case if you need to parse HTML which contains contextual elements (``td``, ``
 var cells = $('<td>foo</td><td>bar</td>', 'tr')
 ```
 
-### 
+###
 
 ## What's the difference between **bala** and [balalaika](https://github.com/finom/balalaika/)?
 
