@@ -207,7 +207,7 @@ $.one('.my-selector').style.color = 'red';
 ### Delegated events
 ```js
 $('.my-selector').forEach(function(element) {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function(evt) {
     if(this.contains(evt.target.closest('.delegated-selector'))) {
       alert('yep!');
     }
@@ -216,7 +216,7 @@ $('.my-selector').forEach(function(element) {
 ```
 Or
 ```js
-$.one('.my-selector').addEventListener('click', function() {
+$.one('.my-selector').addEventListener('click', function(evt) {
   if(this.contains(evt.target.closest('.delegated-selector'))) {
     alert('yep!');
   }
@@ -232,11 +232,12 @@ $('.my-selector').forEach(function(element) {
 Or
 ```js
 $.one('.my-selector').remove();
-
 ```
 
+You may need [DOM4 polyfill](https://github.com/WebReflection/dom4) to get .remove method.
+
 ### Animations
-Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations.
+Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js)
 ```js
 $.one('.my-selector').animate([
   {transform: 'translate(' + snowLeft + 'px, -100%)'},
@@ -262,6 +263,7 @@ fetch('user.json')
   })
   .catch(alert);
 ```
+You may need [polyfill](https://github.com/github/fetch) for it
 
 
 * bala means bullet in Spanish
