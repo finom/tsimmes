@@ -1,6 +1,7 @@
 bala.js
 ============
 
+**UNDER DEVELOPMENT**
 
 ## A function for elements selection in 375 chars.
 

@@ -5,7 +5,7 @@
   }; 
 $.fn = $.prototype = fn;
 
-$.one = function(s) {
+$.one = function(s, context) {
   return $(s, context)[0]||null;
 };
 
