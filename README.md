@@ -8,7 +8,7 @@ bala.js
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
-(the image belongs to it's author)
+(the image is taken somewhere from the internet)
 
 
 
