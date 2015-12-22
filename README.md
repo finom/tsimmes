@@ -48,7 +48,12 @@ And you can use it as a local variable in a script you make
 })(window, function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e);return this};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]));
 ```
 
-It's inherited from ``Array.prototype`` which means it has the same collection of methods.
+Or install it via NPM
+```
+npm install --save balajs
+```
+
+**bala.js** is inherited from ``Array.prototype`` which means it has the same collection of methods as native array has.
 
 <ul>
 	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a></li>
@@ -111,12 +116,17 @@ $.one('.button');
 $('.button')[0];
 ```
 
-This funtion is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``) that means you can import **bala** nicely via module system.
+This funtion is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``) which means you can import **bala** nicely via module system.
 ```js
-import $ from 'bala';
+import $ from 'balajs';
 ```
 ```js
-var $ = require('bala');
+var $ = require('balajs');
+```
+
+Or
+```js
+var $ = require('path/to/bala/umd/bala.umd.js');
 ```
 
 ### Find elements inside another element
@@ -128,13 +138,14 @@ var element = $.one('.my-selector', someParent);
 
 
 ### DOM ready
-```js
 When you pass a function to **bala** it will be executed after ``DOMContentLoaded`` event (or immediately if DOM is ready)
+
+```js
 $(function() {
   alert('DOM is ready');
 });
 ```
-By the way, instead of using DOM ready you can pass all your scripts to the end of ``body`` tag. It works everywhere.
+By the way, instead of using "DOM ready" you can pass all your scripts to the end of ``body`` tag. It works everywhere.
 ```html
     ...
     <script src="app.js"></script>
@@ -158,7 +169,7 @@ var cells = $('<td>foo</td><td>bar</td>', 'tr')
 
 ## What's the difference between **bala** and [balalaika](https://github.com/finom/balalaika/)?
 
-The new DOM API and new JavaScript features are coming into the browsers very fast. Some of the functions from balalaika don't have sense today. For example you can use natively supported [Object.assign](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  instead of ``$.extend`` function (you may need to find polyfill for it). You can use [element.matches](https://developer.mozilla.org/ru/docs/Web/API/Element/matches) instead of ``$.fn.is``. The only things you may need are ``$.fn.on`` and ``$.fn.off`` methods (for namespaced events etc). If you really need them, use balalaika instead.
+The new DOM API and new JavaScript features are coming into the browsers very quickly. Some of the functions from balalaika don't have sense today. For example you can use natively supported [Object.assign](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  instead of ``$.extend`` function (you may need to find polyfill for it). You can use [element.matches](https://developer.mozilla.org/ru/docs/Web/API/Element/matches) instead of ``$.fn.is``. The only things you may need are ``$.fn.on`` and ``$.fn.off`` methods (for namespaced events etc). If you really need them, use balalaika instead.
 
 ## Plugins
 
@@ -198,7 +209,7 @@ $('.my-selector').forEach(function(element) {
 });
 ```
 
-Or in case if you need to set style only for one element you can use ``$.one``.
+In case if you need to set style only for one element you can use ``$.one``.
 
 ```js
 $.one('.my-selector').style.color = 'red';
@@ -234,7 +245,7 @@ Or
 $.one('.my-selector').remove();
 ```
 
-You may need [DOM4 polyfill](https://github.com/WebReflection/dom4) to get .remove method.
+You may need [DOM4 polyfill](https://github.com/WebReflection/dom4) to get ``element.remove`` and ``element.closest`` methods.
 
 ### Animations
 Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js)
@@ -252,7 +263,7 @@ Do you really need jQuery?
 
 ### Ajax
 
-Heh, of course there aren't ajax features. Use fantastic nativelly supported [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) function
+Heh, of course there aren't ajax features. Use fantastic nativelly supported [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) function instead of ugly XMLHttpRequest.
 ```js
 fetch('user.json')
   .then(function(response) {
@@ -266,4 +277,4 @@ fetch('user.json')
 You may need [polyfill](https://github.com/github/fetch) for it
 
 
-* bala means bullet in Spanish
+*bala means "bullet" in Spanish
