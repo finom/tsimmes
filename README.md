@@ -16,7 +16,7 @@ bala.js
 
 ---------------------
 
-**bala.js** is a function that allows you easily select elements on a web page.
+**bala.js** is the function that allows you easily select elements on a web page.
 ```js
 var buttons = $('.button');
 ```
@@ -93,7 +93,7 @@ $(jQuery('.selector'));
 $([document.querySelector('.one'), document.querySelector('.two')])
 ```
 
-That means when you make your own library (VanillaJS plugin :)) you can use **bala** in case if you don't know which arg type will be passed.
+That means when you make your own library (VanillaJS plugin :)) you can use **bala** in case if you don't know which arg type will be passed by a user.
 
 ```js
 var myCoolLibrary = function(el) {
@@ -103,7 +103,7 @@ var myCoolLibrary = function(el) {
 ```
 
 ### $.one
-Getting zero-indexed element is annoying. **bala** has one little static method called ``$.one`` which selects only one element.
+Getting zero-indexed element in DOM libraries is annoying. **bala** has one little static method called ``$.one`` which selects only one element.
 
 ```js
 $.one('.button');
@@ -121,19 +121,20 @@ var $ = require('bala');
 
 ### Find elements inside another element
 ```js
-var elements = $('.my-selector', element);
+var elements = $('.my-selector', someParent);
 // or
-var element = $.one('.my-selector', element);
+var element = $.one('.my-selector', someParent);
 ```
 
 
 ### DOM ready
 ```js
+When you pass a function to **bala** it will be executed after ``DOMContentLoaded`` event (or immediately if DOM is ready)
 $(function() {
   alert('DOM is ready');
 });
 ```
-By the way, instead of using DOM ready you can pass all your scripts to the end of ``body`` tag.
+By the way, instead of using DOM ready you can pass all your scripts to the end of ``body`` tag. It works everywhere.
 ```html
     ...
     <script src="app.js"></script>
@@ -143,6 +144,7 @@ By the way, instead of using DOM ready you can pass all your scripts to the end 
 
 
 ### Parse HTML
+Just simple parsing.
 ```js
 var div = $('<div><span class="yeah"></span></div>');
 ```
@@ -153,15 +155,14 @@ In case if you need to parse HTML which contains contextual elements (``td``, ``
 var cells = $('<td>foo</td><td>bar</td>', 'tr')
 ```
 
-###
 
 ## What's the difference between **bala** and [balalaika](https://github.com/finom/balalaika/)?
 
-The new DOM API and new JavaScript features are coming into the browsers. Some of the functions from balalaika don't have sense today. For example you can use nativelly supported [Object.assign](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  instead of ``$.extend`` function. You can use [element.matches](https://developer.mozilla.org/ru/docs/Web/API/Element/matches) instead of ``$.fn.is``. The only things you may need are ``$.fn.on`` and ``$.fn.off`` methods (for namespaced events etc). If you really need them, use balalaika instead.
+The new DOM API and new JavaScript features are coming into the browsers very fast. Some of the functions from balalaika don't have sense today. For example you can use natively supported [Object.assign](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  instead of ``$.extend`` function (you may need to find polyfill for it). You can use [element.matches](https://developer.mozilla.org/ru/docs/Web/API/Element/matches) instead of ``$.fn.is``. The only things you may need are ``$.fn.on`` and ``$.fn.off`` methods (for namespaced events etc). If you really need them, use balalaika instead.
 
 ## Plugins
 
-You can extend **bala** as easily as you do it with jQuery, Zepto or balalaika. Use ``fn`` or ``prototype`` property to define your own plugin.
+You can extend **bala** as easily as you do it with jQuery, Zepto or balalaika. Use ``fn`` property to define your own plugin.
 
 ```js
 $.fn.toggle = function(boolean) {
