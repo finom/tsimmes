@@ -123,12 +123,12 @@ var $ = require('bala');
 ```js
 var elements = $('.my-selector', element);
 // or
-element = $.one('.my-selector', element);
+var element = $.one('.my-selector', element);
 ```
 
 
 ### DOM ready
-```
+```js
 $(function() {
   alert('DOM is ready');
 });
