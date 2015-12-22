@@ -3,10 +3,7 @@ bala.js
 
 [![Join the chat at https://gitter.im/finom/bala](https://badges.gitter.im/finom/bala.svg)](https://gitter.im/finom/bala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**UNDER DEVELOPMENT**
-
 ## A function for elements selection in 420 chars.
-
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
