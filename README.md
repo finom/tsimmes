@@ -275,5 +275,7 @@ fetch('user.json')
 ```
 You may need [polyfill](https://github.com/github/fetch) for it
 
+## Browser support
+**bala** works in all modern browsers starting Internet Explorer 9. The only thing that doesn't work in IE9 is contextual parsing due to specific bugs. If you need to know how to build a table dynamically in IE9 and below via native DOM functions please refer to [this article](https://msdn.microsoft.com/en-us/library/ms532998(v=vs.85).aspx).
 
 *bala means "bullet" in Spanish
