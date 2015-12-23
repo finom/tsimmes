@@ -11,9 +11,21 @@
 		$ = function(s, context) {
 			return new Bala(s, context);
 		};
-		
+
 		Bala = function(s, context) {
-			fn.push.apply(this, !s ? fn : s.nodeType || s == window ? [s] : "" + s === s ? /</.test(s) ? ((i = document.createElement(context || 'q')).innerHTML = s, i.children) : (context && $(context)[0] || document).querySelectorAll(s) : /f/.test(typeof s) ? /c/.test(document.readyState) ? s() : document.addEventListener('DOMContentLoaded', s) : s);
+			fn.push.apply(this, !s
+				? fn // if arg is falsy, pass []
+				: s.nodeType || s == window // else if arg is window,
+					? [s] // pass [window]
+					: "" + s === s // else if arg is string
+						? /</.test(s) // if contains "<" (if HTML is passed)
+							? ((i = document.createElement(context || 'q')).innerHTML = s, i.children) // parse it and return node.children
+							: (context && $(context)[0] || document).querySelectorAll(s) // else select elements by selector
+						: /f/.test(typeof s) // else if function is passed
+							? /c/.test(document.readyState) // if DOM is ready
+								? s() // run function
+								: document.addEventListener('DOMContentLoaded', s) // else wait for DOM ready
+							: s);
 		};
 
 		$.fn = Bala.prototype = fn;
