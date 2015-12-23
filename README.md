@@ -3,14 +3,11 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 
-## A function for elements selection in 408 chars.
+### A function for elements selection in 411 chars
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
 (the image is taken somewhere from the internet)
-
-
-
 
 
 ---------------------
@@ -23,7 +20,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]);
+$=function(d,e,g,h,c,f){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a[g]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||"q")).innerHTML=a,b.children):b?(b=c(b)[0])?b[h](a):e:d[h](a):/f/.test(typeof a)?"c"==d.readyState[0]?a():d[g]("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[],"addEventListener","querySelectorAll");
 </script>
 ```
 
@@ -44,7 +41,7 @@ And you can use it as a local variable in a script you make
         alert($('.my-selector').length);
     });
   // your code ends here
-})(window, function(d,e,c,f,g){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a.nodeType||a==window?[a]:""+a===a?/</.test(a)?((g=d.createElement(b||"q")).innerHTML=a,g.children):(b&&c(b)[0]||d).querySelectorAll(a):/f/.test(typeof a)?/c/.test(d.readyState)?a():d.addEventListener("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[]));
+})(window, function(d,e,g,h,c,f){c=function(a,b){return new f(a,b)};f=function(a,b){e.push.apply(this,a?a[g]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||"q")).innerHTML=a,b.children):b?(b=c(b)[0])?b[h](a):e:d[h](a):/f/.test(typeof a)?"c"==d.readyState[0]?a():d[g]("DOMContentLoaded",a):a:e)};c.fn=f.prototype=e;c.one=function(a,b){return c(a,b)[0]||null};return c}(document,[],"addEventListener","querySelectorAll"));
 ```
 
 Or install it via NPM

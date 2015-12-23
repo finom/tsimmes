@@ -64,6 +64,18 @@
 			$('.test-1', '.test').length && !$('.test-xx', '.test').length ? ok() : fail();
 		});
 
+		it('Doesn\'t use wrong context context', function(ok, fail) {
+			!$('.test', '.test-undefined').length ? ok() : fail();
+		});
+
+		it('Allows to use window', function(ok, fail) {
+			$(window)[0] === window ? ok() : fail();
+		});
+
+		it('Allows to use document', function(ok, fail) {
+			$(document)[0] === document ? ok() : fail();
+		});
+
 		it('Parses HTML', function(ok, fail) {
 			var $el = $('<div></div><span></span>');
 			$el.length == 2 && $el[0].tagName == 'DIV' && $el[1].tagName == 'SPAN' ? ok() : fail();
