@@ -15,8 +15,8 @@
 		Bala = function(s, context) {
 			fn.push.apply(this, !s
 				? fn // if arg is falsy, pass []
-				: s.nodeType || s == window // else if arg is window,
-					? [s] // pass [window]
+				: s.nodeType || s == window // else if arg is node or window,
+					? [s] // pass [s]
 					: "" + s === s // else if arg is string
 						? /</.test(s) // if contains "<" (if HTML is passed)
 							? ((i = document.createElement(context || 'q')).innerHTML = s, i.children) // parse it and return node.children
