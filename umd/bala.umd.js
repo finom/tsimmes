@@ -25,7 +25,7 @@
 							? /c/.test(document.readyState) // if DOM is ready
 								? s() // run function
 								: document.addEventListener('DOMContentLoaded', s) // else wait for DOM ready
-							: s);
+							: s); // else guessing that s is array-like object
 		};
 
 		$.fn = Bala.prototype = fn;
