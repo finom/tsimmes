@@ -20,7 +20,7 @@
 					: "" + s === s // else if arg is string
 						? /</.test(s) // if contains "<" (if HTML is passed)
 							? ((context = document.createElement(context || 'q')).innerHTML = s, context.children) // parse it and return node.children
-							: context // if context is trooly
+							: context // if context is truly
 								? ((context = $(context)[0]) // if context element is found
 									? context[s_querySelectorAll](s) // select element from context
 									: fn) // if context isn't found, pass []
