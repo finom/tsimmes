@@ -1,5 +1,5 @@
 $ = (function(document, fn, s_addEventListener, s_querySelectorAll, $, Bala) {
-	$ = function(s, context) {//console.log(s, context);
+	$ = function(s, context) {
 		return new Bala(s, context);
 	};
 
