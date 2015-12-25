@@ -64,7 +64,7 @@
 			$('.test-1', '.test').length && !$('.test-xx', '.test').length ? ok() : fail();
 		});
 
-		it('Doesn\'t use wrong context context', function(ok, fail) {
+		it('Doesn\'t use wrong context', function(ok, fail) {
 			!$('.test', '.test-undefined').length ? ok() : fail();
 		});
 
