@@ -72,6 +72,10 @@
 			$(window)[0] === window ? ok() : fail();
 		});
 
+		it('Allows to use undefined and null', function(ok, fail) {
+			!$(null).length && !$().length ? ok() : fail();
+		});
+
 		it('Allows to use document', function(ok, fail) {
 			$(document)[0] === document ? ok() : fail();
 		});
