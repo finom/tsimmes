@@ -4,6 +4,7 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 ### A function for elements selection in 394 chars
+Less than Google Analytics code!
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
