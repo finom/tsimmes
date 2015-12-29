@@ -3,7 +3,7 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 
-### A function for elements selection in 408 chars
+### A function for elements selection in 400 chars
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
@@ -20,7 +20,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(d,f,g,c,e){c=function(a,b){return new e(a,b)};e=function(a,b){a&&[].push.apply(this,a[f]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||"q")).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):[]:d[g](a):/f/.test(typeof a)?"c"==d.readyState[0]?a():d[f]("DOMContentLoaded",a):a)};c.fn=e.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll");
+$=function(d,e,g,c,f){c=function(a,b){return new f(a,b)};f=function(a,b){a&&[].push.apply(this,a[e]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||e)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):[]:d[g](a):(typeof a)[7]?"c"==d.readyState[0]?a():d[e]("DOMContentLoaded",a):a)};c.fn=f.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll")
 </script>
 ```
 
@@ -41,7 +41,7 @@ And you can use it as a local variable in a script you make
         alert($('.my-selector').length);
     });
   // your code ends here
-})(window, function(d,f,g,c,e){c=function(a,b){return new e(a,b)};e=function(a,b){a&&[].push.apply(this,a[f]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||"q")).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):[]:d[g](a):/f/.test(typeof a)?"c"==d.readyState[0]?a():d[f]("DOMContentLoaded",a):a)};c.fn=e.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
+})(window, function(d,e,g,c,f){c=function(a,b){return new f(a,b)};f=function(a,b){a&&[].push.apply(this,a[e]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||e)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):[]:d[g](a):(typeof a)[7]?"c"==d.readyState[0]?a():d[e]("DOMContentLoaded",a):a)};c.fn=f.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
 ```
 
 Or install it via NPM
