@@ -7,12 +7,12 @@
 		root.$ = factory();
 	}
 }(this, function() {
-	return (function(document, s_addEventListener, s_querySelectorAll, $, Bala) {
-		$ = function(s, context) {
+	return (function(document, s_addEventListener, s_querySelectorAll) {
+		function $(s, context) {
 			return new Bala(s, context);
-		};
+		}
 
-		Bala = function(s, context) {
+		function Bala(s, context) {
 			s && [].push.apply(this, // if s is truly then push the following
 				s[s_addEventListener] // if arg is node or window,
 					? [s] // then pass [s]
@@ -35,7 +35,7 @@
 								? s() // then run given function
 								: document[s_addEventListener]('DOMContentLoaded', s) // else wait for DOM ready
 							: s); // else guessing that s variable is array-like object
-		};
+		}
 
 		$.fn = Bala.prototype = [];
 
