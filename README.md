@@ -3,7 +3,9 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 
-### A function for elements selection in 394 chars
+### A function for elements selection in 377 chars
+
+Less than Google Analytics tracking code!
 
 ![](http://pngimg.com/upload/bullets_PNG1473.png)
 
@@ -12,7 +14,7 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 ---------------------
 
-**bala.js** is the function that allows you easily select elements on a web page.
+**bala.js** is the function that allows you easily select elements on a web page and get rid of jQuery in most cases.
 ```js
 var buttons = $('.button');
 ```
@@ -20,7 +22,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(d,e,f){function c(a,b){return new g(a,b)}function g(a,b){a&&[].push.apply(this,a[e]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||e)).innerHTML=a,b.children):b?(b=c(b)[0])?b[f](a):[]:d[f](a):(typeof a)[7]?"c"==d.readyState[0]?a():d[e]("DOMContentLoaded",a):a)}c.fn=g.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll")
+$=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?"c"==e.readyState[0]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll");
 </script>
 ```
 
@@ -41,7 +43,7 @@ And you can use it as a local variable in a script you make
         alert($('.my-selector').length);
     });
   // your code ends here
-})(window, function(d,e,f){function c(a,b){return new g(a,b)}function g(a,b){a&&[].push.apply(this,a[e]?[a]:""+a===a?/</.test(a)?((b=d.createElement(b||e)).innerHTML=a,b.children):b?(b=c(b)[0])?b[f](a):[]:d[f](a):(typeof a)[7]?"c"==d.readyState[0]?a():d[e]("DOMContentLoaded",a):a)}c.fn=g.prototype=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
+})(window, $=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?"c"==e.readyState[0]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
 ```
 
 Or install it via NPM

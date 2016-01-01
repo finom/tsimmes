@@ -1,10 +1,8 @@
 $ = (function(document, s_addEventListener, s_querySelectorAll) {
-	function $(s, context) {
-		return new Bala(s, context);
-	}
+	function $(s, context, bala) {
+		bala = Object.create($.fn);
 
-	function Bala(s, context) {
-		s && [].push.apply(this, // if s is truly then push the following
+		s && bala.push.apply(bala, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
 				? [s] // then pass [s]
 				: "" + s === s // else if arg is a string
@@ -16,7 +14,7 @@ $ = (function(document, s_addEventListener, s_querySelectorAll) {
 						: context // else if context is truly
 							? ((context = $(context)[0]) // if context element is found
 								? context[s_querySelectorAll](s) // then select element from context
-								: []) // else pass [] (context isn't found)
+								: bala) // else pass [] (context isn't found)
 							: document[s_querySelectorAll](s) // else select elements globally
 					// else if function is passed
 					// ("function" and "undefined" are the longest values of typeof
@@ -25,10 +23,12 @@ $ = (function(document, s_addEventListener, s_querySelectorAll) {
 						? document.readyState[0] == 'c' // if DOM is ready
 							? s() // then run given function
 							: document[s_addEventListener]('DOMContentLoaded', s) // else wait for DOM ready
-						: s); // else guessing that s variable is array-like object
+						: s); // else guessing that s variable is array-like Object
+
+		return bala;
 	}
 
-	$.fn = Bala.prototype = [];
+	$.fn = [];
 
 	$.one = function(s, context) {
 		return $(s, context)[0] || null;
