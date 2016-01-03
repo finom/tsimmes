@@ -16,10 +16,7 @@ $ = (function(document, s_addEventListener, s_querySelectorAll) {
 								? context[s_querySelectorAll](s) // then select element from context
 								: bala) // else pass [] (context isn't found)
 							: document[s_querySelectorAll](s) // else select elements globally
-					// else if function is passed
-					// ("function" and "undefined" are the longest values of typeof
-					// and we've already checked s for falsy)
-					: (typeof s)[7]
+					: typeof s == 'function' // else if function is passed
 						// if DOM is ready
 						// readyState[7] means readyState value is "interactive" or "complete" (not "loading")
 						? document.readyState[7]
