@@ -3,7 +3,7 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 
-### A function for elements selection in 377 chars
+### A function for elements selection in 372 chars
 
 **Less than Google Analytics tracking code!**
 
@@ -23,7 +23,7 @@ var buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?"c"==e.readyState[0]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll");
+$=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?e.readyState[7]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll");
 </script>
 ```
 
@@ -44,7 +44,7 @@ And you can use it as a local variable in a script you make
         alert($('.my-selector').length);
     });
   // your code ends here
-})(window, $=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?"c"==e.readyState[0]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
+})(window, function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):(typeof a)[7]?e.readyState[7]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
 ```
 
 Or install it via NPM
@@ -115,18 +115,31 @@ $.one('.button');
 $('.button')[0];
 ```
 
-This funtion is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``) which means you can import **bala** nicely via module system.
+This function is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``) which means you can import **bala** nicely via module system.
+
+**AMD**
 ```js
-import $ from 'balajs';
+require(['path/to/bala/umd/bala.umd.js'], function($) {
+	// ...
+});
 ```
+
+**CommonJS**
+```js
+var $ = require('path/to/bala/umd/bala.umd.js');
+```
+
+**CommonJS + NPM**
 ```js
 var $ = require('balajs');
 ```
 
-Or
+**ECMAScript 2015**
 ```js
-var $ = require('path/to/bala/umd/bala.umd.js');
+import $ from 'balajs';
 ```
+
+Note that UMD version of **bala** takes ~530 bytes minified and uncompressed and ~360 bytes minified and gzipped (which still less than any DOM library takes).
 
 ### Find elements inside another element
 ```js

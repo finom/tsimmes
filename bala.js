@@ -20,7 +20,9 @@ $ = (function(document, s_addEventListener, s_querySelectorAll) {
 					// ("function" and "undefined" are the longest values of typeof
 					// and we've already checked s for falsy)
 					: (typeof s)[7]
-						? document.readyState[0] == 'c' // if DOM is ready
+						// if DOM is ready
+						// readyState[7] means readyState value is "interactive" or "complete" (not "loading")
+						? document.readyState[7]
 							? s() // then run given function
 							: document[s_addEventListener]('DOMContentLoaded', s) // else wait for DOM ready
 						: s); // else guessing that s variable is array-like Object
