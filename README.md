@@ -87,7 +87,7 @@ npm install --save balajs
 ## More features?
 
 ### Different types support
-**bala** is very flexible function. It accepts many kinds of first argument and converts everythng into **bala** instance
+**bala** is very flexible function. It accepts many kinds of first argument and converts everything into **bala** instance
 ```js
 $('.one, two')
 $(document.querySelectorAll('.selector'));
