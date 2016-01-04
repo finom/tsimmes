@@ -41,11 +41,9 @@ $=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]
 *If you don't want to use ``$`` variable just rename it.*
 ```html
 <script>
-$=...
-</script>
-
-<script>
 foo=...
+// instead of
+$=...
 </script>
 ```
 
