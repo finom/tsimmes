@@ -27,17 +27,6 @@ $=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]
 </script>
 ```
 
-*If you don't want to use ``$`` variable just rename it*
-```html
-<script>
-$=...
-</script>
-```
-```html
-<script>
-foo=...
-</script>
-```
 
 
 ```html
@@ -45,6 +34,18 @@ foo=...
     $(function() {
         alert($('.my-selector').length);
     });
+</script>
+```
+
+
+*If you don't want to use ``$`` variable just rename it*
+```html
+<script>
+$=...
+</script>
+
+<script>
+foo=...
 </script>
 ```
 
