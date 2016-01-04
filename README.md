@@ -27,6 +27,19 @@ $=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]
 </script>
 ```
 
+*If you don't want to use ``$`` variable just rename it*
+```html
+<script>
+$=...
+</script>
+```
+```html
+<script>
+foo=...
+</script>
+```
+
+
 ```html
 <script>
     $(function() {
@@ -51,6 +64,7 @@ Or install it via NPM
 ```
 npm install --save balajs
 ```
+
 
 **bala.js** is inherited from ``Array.prototype`` which means it has the same collection of methods as native array has.
 
