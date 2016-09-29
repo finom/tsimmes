@@ -1,6 +1,6 @@
 $ = ((document, s_addEventListener, s_querySelectorAll, $) => (
-	($ = (s, context, bala) => {
-		bala = Object.create($.fn);
+	($ = (s, context, bala) => (
+		(bala = Object.create($.fn)),
 
 		s && bala.push.apply(bala, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
@@ -22,10 +22,9 @@ $ = ((document, s_addEventListener, s_querySelectorAll, $) => (
 						? document.readyState[7]
 							? s() // then run given function
 							: document[s_addEventListener]('DOMContentLoaded', s) // else wait for DOM ready
-						: s); // else guessing that s variable is array-like Object
-
-		return bala;
-	}),
+						: s), // else guessing that s variable is array-like Object
+        bala
+	)),
 
 	($.fn = []),
 

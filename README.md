@@ -3,7 +3,8 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 
 
-### A function for elements selection in 379 chars
+### A function for elements selection in 379 chars (346 chars at es2015 version)
+
 
 **Less than Google Analytics tracking code!**
 
