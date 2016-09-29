@@ -1,8 +1,8 @@
-$ = ((document, s_addEventListener, s_querySelectorAll) => {
-	function $(s, context, bala) {
+$ = ((document, s_addEventListener, s_querySelectorAll, $) => (
+	($ = (s, context, bala) => {
 		bala = Object.create($.fn);
 
-		s && bala.push(bala, ...(// if s is truly then push the following
+		s && bala.push.apply(bala, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
 				? [s] // then pass [s]
 				: "" + s === s // else if arg is a string
@@ -22,14 +22,14 @@ $ = ((document, s_addEventListener, s_querySelectorAll) => {
 						? document.readyState[7]
 							? s() // then run given function
 							: document[s_addEventListener]('DOMContentLoaded', s) // else wait for DOM ready
-						: s)); // else guessing that s variable is array-like Object
+						: s); // else guessing that s variable is array-like Object
 
 		return bala;
-	}
+	}),
 
-	$.fn = [];
+	($.fn = []),
 
-	$.one = (s, context) => $(s, context)[0] || null;
+	($.one = (s, context) => $(s, context)[0] || null),
 
-	return $;
-})(document, 'addEventListener', 'querySelectorAll');
+	$
+))(document, 'addEventListener', 'querySelectorAll');
