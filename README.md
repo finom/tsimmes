@@ -182,8 +182,8 @@ $.one('.my-selector').style.color = 'red';
 ### Events delegation
 ```js
 for(let element of $('.my-selector')) {
-    element.addEventListener('click', ({ currentTarget, target }) => {
-        if (currentTarget.contains(target.closest('.delegated-selector'))) {
+    element.addEventListener('click', function ({ target }) {
+        if (this.contains(target.closest('.delegated-selector'))) {
             alert('yep!');
         }
     });
@@ -191,8 +191,8 @@ for(let element of $('.my-selector')) {
 ```
 Or
 ```js
-$.one('.my-selector').addEventListener('click', ({ currentTarget, target }) => {
-    if (currentTarget.contains(target.closest('.delegated-selector'))) {
+$.one('.my-selector').addEventListener('click', function ({ target }) {
+    if (this.contains(target.closest('.delegated-selector'))) {
         alert('yep!');
     }
 });
