@@ -1,40 +1,22 @@
 bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs) [![Join the chat at https://gitter.im/finom/bala](https://badges.gitter.im/finom/bala.svg)](https://gitter.im/finom/bala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ============
 
-
-
-### A function for elements selection in 379 chars (346 chars at es2015 version)
+### A function for elements selection in 258 ASCII chars
 
 
 **Less than Google Analytics tracking code!**
-
-
-![](http://pngimg.com/upload/bullets_PNG1473.png)
-
-(the image is taken somewhere from the internet)
-
 
 ---------------------
 
 **bala.js** is the function that allows you easily select elements on a web page and get rid of jQuery in most cases.
 ```js
-var buttons = $('.button');
+const buttons = $('.button');
 ```
 
 You can use it as a global variable on your page
 ```html
 <script>
-$=function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):"function"==typeof a?e.readyState[7]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll");
-</script>
-```
-
-
-
-```html
-<script>
-    $(function() {
-        alert($('.my-selector').length);
-    });
+$=((e,n,t)=>(t=((c,i,o)=>(o=Object.create(t.fn),c&&o.push(...c.dispatchEvent?[c]:""+c===c?/</.test(c)?((i=e.createElement(i||n)).innerHTML=c,i.children):i?(i=t(i)[0])?i[n](c):o:e[n](c):c),o)),t.fn=[],t.one=((e,n)=>t(e,n)[0]),t))(document,"querySelectorAll");
 </script>
 ```
 
@@ -49,13 +31,12 @@ $=...
 And you can use it as a local variable in a script you make
 
 ```js
-(function(win, $) {
+((win, $) => {
     // your code starts here
-    $(function() {
-        alert($('.my-selector').length);
-    });
-  // your code ends here
-})(window, function(e,f,g){function c(a,b,d){d=Object.create(c.fn);a&&d.push.apply(d,a[f]?[a]:""+a===a?/</.test(a)?((b=e.createElement(b||f)).innerHTML=a,b.children):b?(b=c(b)[0])?b[g](a):d:e[g](a):"function"==typeof a?e.readyState[7]?a():e[f]("DOMContentLoaded",a):a);return d}c.fn=[];c.one=function(a,b){return c(a,b)[0]||null};return c}(document,"addEventListener","querySelectorAll"));
+    const divs = $('div');
+    console.log(divs);
+    // your code ends here
+})(window, ((e,n,t)=>(t=((c,i,o)=>(o=Object.create(t.fn),c&&o.push(...c.dispatchEvent?[c]:""+c===c?/</.test(c)?((i=e.createElement(i||n)).innerHTML=c,i.children):i?(i=t(i)[0])?i[n](c):o:e[n](c):c),o)),t.fn=[],t.one=((e,n)=>t(e,n)[0]),t))(document,"querySelectorAll"));
 ```
 
 Or install it via NPM
@@ -109,10 +90,10 @@ $(jQuery('.selector'));
 $([document.querySelector('.one'), document.querySelector('.two')])
 ```
 
-That means when you make your own library (VanillaJS plugin :)) you can use **bala** in case if you don't know which arg type will be passed by a user.
+That means when you make your own library (e. g. VanillaJS plugin) you can use **bala** in case if you don't know which arg type will be passed by a user.
 
 ```js
-var myCoolLibrary = function(el) {
+const myCoolLibrary = (el) => {
   el = $(el);
   // ...
 };
@@ -131,19 +112,19 @@ This function is also created to get rid of extra variables (usually DOM librari
 
 **AMD**
 ```js
-require(['path/to/bala/umd/bala.umd.js'], function($) {
+require(['path/to/bala/umd/bala.umd.js'], ($) => {
 	// ...
 });
 ```
 
 **CommonJS**
 ```js
-var $ = require('path/to/bala/umd/bala.umd.js');
+const $ = require('path/to/bala/bala.umd.js');
 ```
 
 **CommonJS + NPM**
 ```js
-var $ = require('balajs');
+const $ = require('balajs');
 ```
 
 **ECMAScript 2015**
@@ -151,59 +132,36 @@ var $ = require('balajs');
 import $ from 'balajs';
 ```
 
-Note that UMD version of **bala** takes ~530 bytes minified and uncompressed and ~360 bytes minified and gzipped (which still less than any DOM library takes).
-
 ### Find elements inside another element
 ```js
-var elements = $('.my-selector', someParent);
+const elements = $('.my-selector', someParent);
 // or
-var element = $.one('.my-selector', someParent);
-```
-
-
-### DOM ready
-When you pass a function to **bala** it will be executed after ``DOMContentLoaded`` event (or immediately if DOM is ready).
-
-```js
-$(function() {
-  alert('DOM is ready');
-});
-```
-By the way, instead of using "DOM ready" you can pass all your scripts to the end of ``body`` tag. It works everywhere.
-```html
-    ...
-    <script src="app.js"></script>
-  </body>
-</html>
+const element = $.one('.my-selector', someParent);
 ```
 
 
 ### Parse HTML
-Just simple parsing.
+Simple parsing.
 ```js
-var div = $('<div><span class="yeah"></span></div>');
+const div = $('<div><span class="yeah"></span></div>');
 ```
 
 ### Contextual HTML parsing
 In case if you need to parse HTML which contains contextual elements (``td``, ``tr``, ``option``) you can pass a context tag name as a second argument.
 ```js
-var cells = $('<td>foo</td><td>bar</td>', 'tr')
+const cells = $('<td>foo</td><td>bar</td>', 'tr')
 ```
 
 
-## What's the difference between **bala** and [balalaika](https://github.com/finom/balalaika/)?
-
-The new DOM API and new JavaScript features are coming into the browsers very quickly. Some of the functions from balalaika don't have sense today. For example you can use natively supported [Object.assign](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)  instead of ``$.extend`` function (you may need to find polyfill for it). You can use [element.matches](https://developer.mozilla.org/ru/docs/Web/API/Element/matches) instead of ``$.fn.is``. The only things you may need are ``$.fn.on`` and ``$.fn.off`` methods (for namespaced events etc). If you really need them, use balalaika instead.
-
 ## Plugins
 
-You can extend **bala** as easily as you do it with jQuery, Zepto or balalaika. Use ``fn`` property to define your own plugin.
+You can extend **bala** as easily as you do it with jQuery or Zepto. Use ``fn`` property to define your own plugin.
 
 ```js
-$.fn.toggle = function(boolean) {
-  this.forEach(function(item) {
-    item.hidden = boolean;
-  });
+$.fn.toggle = (boolean) => {
+    for(let node of this) {
+        node.hidden = boolean;
+    }
 };
 
 $('.button').toggle(false); // hides all buttons
@@ -211,26 +169,11 @@ $('.button').toggle(false); // hides all buttons
 
 ## I need more examples!
 
-### Iterate over elements
-True way
-```js
-for(let element of $('.button')) {
-  console.log(element);
-}
-```
-
-Old school way
-```js
-$('.button').forEach(function(element) {
-  console.log(element);
-});
-```
-
 ### Add style
 ```js
-$('.my-selector').forEach(function(element) {
+for(let element of $('.my-selector')) {
     element.style.color = 'red';
-});
+}
 ```
 
 In case if you need to set style only for one element you can use ``$.one``.
@@ -239,37 +182,35 @@ In case if you need to set style only for one element you can use ``$.one``.
 $.one('.my-selector').style.color = 'red';
 ```
 
-### Delegated events
+### Events delegation
 ```js
-$('.my-selector').forEach(function(element) {
-  element.addEventListener('click', function(evt) {
-    if(this.contains(evt.target.closest('.delegated-selector'))) {
-      alert('yep!');
-    }
-  });
-});
+for(let element of $('.my-selector')) {
+    element.addEventListener('click', ({ currentTarget, target }) => {
+        if (currentTarget.contains(target.closest('.delegated-selector'))) {
+            alert('yep!');
+        }
+    });
+}
 ```
 Or
 ```js
-$.one('.my-selector').addEventListener('click', function(evt) {
-  if(this.contains(evt.target.closest('.delegated-selector'))) {
-    alert('yep!');
-  }
+$.one('.my-selector').addEventListener('click', ({ currentTarget, target }) => {
+    if (currentTarget.contains(target.closest('.delegated-selector'))) {
+        alert('yep!');
+    }
 });
 ```
 
 ### Elements removal
 ```js
-$('.my-selector').forEach(function(element) {
+for(let element of $('.my-selector')) {
     element.remove();
-});
+}
 ```
 Or
 ```js
 $.one('.my-selector').remove();
 ```
-
-You may need [DOM4 polyfill](https://github.com/WebReflection/dom4) to get ``element.remove`` and ``element.closest`` methods.
 
 ### Animations
 Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js)
@@ -283,24 +224,5 @@ $.one('.my-selector').animate([
   delay: 300
 });
 ```
-Do you really need jQuery?
 
-### Ajax
-
-Heh, of course there aren't ajax features. Use fantastic nativelly supported [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) function instead of ugly XMLHttpRequest.
-```js
-fetch('user.json')
-  .then(function(response) {
-    return response.json();
-   })
-  .then(function(user) {
-    console.log(user);
-  })
-  .catch(alert);
-```
-You may need [polyfill](https://github.com/github/fetch) for it
-
-## Browser support
-**bala** works in all modern browsers starting Internet Explorer 9. The only thing that doesn't work in IE9 is contextual parsing due to specific bugs. If you need to know how to build a table dynamically in IE9 and below via native DOM functions please refer to [this article](https://msdn.microsoft.com/en-us/library/ms532998(v=vs.85).aspx).
-
-*bala means "bullet" in Spanish
+Do you still need jQuery?

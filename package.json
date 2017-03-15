@@ -1,10 +1,12 @@
 {
   "name": "balajs",
-  "version": "0.1.9",
+  "version": "1.0.0",
   "description": "A function for elements selection",
-  "main": "./umd/bala.umd.js",
+  "main": "./bala.umd.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "uglify": "uglifyjs --compress --mangle -- src.js > bala.min.js",
+    "generate-umd": "node tools/generateUmd"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/finom/bala/issues"
   },
-  "homepage": "https://github.com/finom/bala#readme"
+  "homepage": "https://github.com/finom/bala#readme",
+  "devDependencies": {
+    "uglify-js": "https://github.com/mishoo/UglifyJS2.git#harmony"
+  }
 }
