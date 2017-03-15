@@ -23,38 +23,9 @@
 			document.body.appendChild(frag);
 		};
 	</script>
-	<script src="bala.js"></script>
+	<script src="bala.min.js"></script>
 
 	<script src="https://cdn.jsdelivr.net/requirejs/2.1.22/require.min.js"></script>
-	<script>
-		it('Allows to use DOM ready feature', function(ok, fail) {
-			var timeout = setTimeout(fail, 1000);
-			$(function() {
-				ok();
-				clearTimeout(timeout);
-			});
-		});
-
-		it('Allows to use DOM ready feature when DOM is ready', function(ok, fail) {
-			var timeout = setTimeout(fail, 1000);
-			document.addEventListener('DOMContentLoaded', function() {
-				$(function() {
-					ok();
-					clearTimeout(timeout);
-				});
-			});
-		});
-
-		it('Allows to use DOM ready feature when window is loaded', function(ok, fail) {
-			var timeout = setTimeout(fail, 1000);
-			window.addEventListener('load', function() {
-				$(function() {
-					ok();
-					clearTimeout(timeout);
-				});
-			});
-		});
-	</script>
 </head>
 
 <body>
@@ -126,7 +97,7 @@
 
 		it('Works with AMD', function(ok, fail) {
 			var timeout = setTimeout(fail, 1000);
-			require(['umd/bala.umd.js'], function($) {
+			require(['./bala.umd.js'], function($) {
 				if($.one) {
 					ok();
 					clearTimeout(timeout);
