@@ -1,9 +1,7 @@
-bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs) [![Join the chat at https://gitter.im/finom/bala](https://badges.gitter.im/finom/bala.svg)](https://gitter.im/finom/bala?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
 ============
 
 ### A function for elements selection in 258 ASCII chars
-
----------------------
 
 **bala.js** is a function that allows you easily select elements on a web page and get rid of jQuery in most of cases.
 ```js
