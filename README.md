@@ -3,12 +3,9 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 ### A function for elements selection in 258 ASCII chars
 
-
-**Less than Google Analytics tracking code!**
-
 ---------------------
 
-**bala.js** is the function that allows you easily select elements on a web page and get rid of jQuery in most cases.
+**bala.js** is a function that allows you easily select elements on a web page and get rid of jQuery in most of cases.
 ```js
 const buttons = $('.button');
 ```
@@ -45,7 +42,7 @@ npm install --save balajs
 ```
 
 
-**bala.js** is inherited from ``Array.prototype`` which means it has the same collection of methods as native array has.
+**bala.js** is inherited from ``Array.prototype`` which means it has the same set of methods as native array has.
 
 <ul>
 	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a></li>
@@ -80,7 +77,7 @@ npm install --save balajs
 ## More features?
 
 ### Different types support
-**bala** is very flexible function. It accepts many kinds of first argument and converts everything into **bala** instance
+**bala** accepts many kinds of first argument and converts everything into **bala** instance
 ```js
 $('.one, two')
 $(document.querySelectorAll('.selector'));
@@ -90,7 +87,7 @@ $(jQuery('.selector'));
 $([document.querySelector('.one'), document.querySelector('.two')])
 ```
 
-That means when you make your own library (e. g. VanillaJS plugin) you can use **bala** in case if you don't know which arg type will be passed by a user.
+That means when you make your own library (e. g. VanillaJS plugin) you can use **bala** in case if you don't know which arg type will be passed by a programmer.
 
 ```js
 const myCoolLibrary = (el) => {
@@ -213,7 +210,7 @@ $.one('.my-selector').remove();
 ```
 
 ### Animations
-Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js)
+Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js).
 ```js
 $.one('.my-selector').animate([
   {transform: 'translate(' + snowLeft + 'px, -100%)'},
