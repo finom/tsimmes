@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "uglify": "uglifyjs --compress --mangle -- src.js > bala.min.js",
-    "generate-umd": "node tools/generateUmd"
+    "generate-umd": "node tools/generateUmd",
+    "build": "npm run uglify && npm run generate-umd"
   },
   "repository": {
     "type": "git",
