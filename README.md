@@ -77,7 +77,7 @@ npm install --save balajs
 ### Different types support
 **bala** accepts many kinds of first argument and converts everything into **bala** instance
 ```js
-$('.one, two')
+$('.one, #two')
 $(document.querySelectorAll('.selector'));
 $(document.body);
 $(element.children);
