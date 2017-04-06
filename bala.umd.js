@@ -26,7 +26,7 @@
 	($.one = (s, context) => $(s, context)[0]),
 
 	$
-))(document, 'querySelectorAll')
+))(document, 'querySelectorAll');
 
 	
 	if (typeof define == 'function' && define.amd) {

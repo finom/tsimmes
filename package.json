@@ -1,13 +1,14 @@
 {
   "name": "balajs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A function for elements selection",
-  "main": "./bala.umd.js",
+  "main": "./es5/bala.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "uglify": "uglifyjs --compress --mangle -- src.js > bala.min.js && uglifyjs --compress --mangle -- bala.umd.js > bala.umd.min.js",
+    "uglify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
     "generate-umd": "node tools/generateUmd",
-    "build": "npm run generate-umd && npm run uglify"
+    "build": "npm run generate-umd && npm run uglify && npm run uglify-es5"
   },
   "repository": {
     "type": "git",
