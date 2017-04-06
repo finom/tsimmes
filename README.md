@@ -3,8 +3,6 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 ### A function for elements selection in 258 ASCII chars
 
-*bala.js isn't compatible with ECMAScript 5 anymore. See how to solve UglifyJS issue [here](https://github.com/finom/bala/issues/5#issuecomment-290368002).*
-
 **bala.js** is a function that allows you easily select elements on a web page and get rid of jQuery in most of cases.
 ```js
 const buttons = $('.button');
