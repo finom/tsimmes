@@ -1,7 +1,7 @@
 bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
 ============
 
-### A function for elements selection in 258 ASCII chars
+### A function for elements selection in 255 ASCII chars
 
 **bala.js** is a function that allows you easily select elements on a web page and get rid of jQuery in most of cases.
 ```js
@@ -11,7 +11,7 @@ const buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=((e,n,t)=>(t=((c,i,o)=>(o=Object.create(t.fn),c&&o.push(...c.dispatchEvent?[c]:""+c===c?/</.test(c)?((i=e.createElement(i||n)).innerHTML=c,i.children):i?(i=t(i)[0])?i[n](c):o:e[n](c):c),o)),t.fn=[],t.one=((e,n)=>t(e,n)[0]),t))(document,"querySelectorAll");
+$=((a,b,c)=>(c=((d,e,f)=>(f=Object.create(c.fn),d&&f.push(...d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d),f)),c.fn=[],c.one=((a,b)=>c(a,b)[0]),c))(document,"querySelectorAll");
 </script>
 ```
 
@@ -31,7 +31,7 @@ And you can use it as a local variable in a script you make
     const divs = $('div');
     console.log(divs);
     // your code ends here
-})(window, ((e,n,t)=>(t=((c,i,o)=>(o=Object.create(t.fn),c&&o.push(...c.dispatchEvent?[c]:""+c===c?/</.test(c)?((i=e.createElement(i||n)).innerHTML=c,i.children):i?(i=t(i)[0])?i[n](c):o:e[n](c):c),o)),t.fn=[],t.one=((e,n)=>t(e,n)[0]),t))(document,"querySelectorAll"));
+})(window, ((a,b,c)=>(c=((d,e,f)=>(f=Object.create(c.fn),d&&f.push(...d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d),f)),c.fn=[],c.one=((a,b)=>c(a,b)[0]),c))(document,"querySelectorAll"));
 ```
 
 Or install it via NPM

@@ -9,8 +9,8 @@
 				: "" + s === s // else if arg is a string
 					? /</.test(s) // if the string contains "<" (if HTML code is passed)
 						// then parse it and return node.children
-						// use 'addEventListener' (HTMLUnknownElement) if content is not presented
-						? ((context = document.createElement(context || s_addEventListener)).innerHTML = s
+						// use 'addEventListener' (HTMLUnknownElement) if context is not presented
+						? ((context = document.createElement(context)).innerHTML = s
 							, context.children)
 						: context // else if context is truly
 							? ((context = $(context)[0]) // if context element is found
