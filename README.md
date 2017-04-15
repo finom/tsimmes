@@ -210,13 +210,13 @@ $.one('.my-selector').remove();
 ### Animations
 Use [element.animate](https://developers.google.com/web/updates/2014/05/Web-Animations-element.animate-is-now-in-Chrome-36) for smooth GPU-accelerated animations. You may need [polyfill for Web Animations API](https://github.com/web-animations/web-animations-js).
 ```js
-$.one('.my-selector').animate([
-  {transform: 'translate(' + snowLeft + 'px, -100%)'},
-  {transform: 'translate(' + snowLeft + 'px, ' + window.innerHeight + 'px)'}
-], {
-  duration: 1500,
-  iterations: 10,
-  delay: 300
+$.one('.my-selector').animate({
+    opacity: [0.5, 1],
+    transform: ['scale(0.5)', 'scale(1)'],
+}, {
+    direction: 'alternate',
+    duration: 500,
+    iterations: Infinity,
 });
 ```
 
