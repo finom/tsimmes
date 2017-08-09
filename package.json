@@ -9,7 +9,8 @@
     "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
     "generate-umd": "node tools/generateUmd",
     "build": "npm run generate-umd && npm run minify && npm run minify-es5",
-    "upgrade": "ncu -a && npm install"
+    "upgrade": "ncu -a && npm install",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
