@@ -1,14 +1,14 @@
 {
   "name": "balajs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A function for elements selection",
   "main": "./es5/bala.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "uglify": "uglifyjs --compress --mangle -- src.js > bala.min.js && uglifyjs --compress --mangle -- bala.umd.js > bala.umd.min.js",
-    "uglify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
+    "minify": "rimraf bala.min.js bala.umd.min.js && babili src.js --out-file bala.min.js && babili bala.umd.js --out-file bala.umd.min.js",
+    "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
     "generate-umd": "node tools/generateUmd",
-    "build": "npm run generate-umd && npm run uglify && npm run uglify-es5",
+    "build": "npm run generate-umd && npm run minify && npm run minify-es5",
     "upgrade": "ncu -a && npm install"
   },
   "repository": {
@@ -28,7 +28,8 @@
   },
   "homepage": "https://github.com/finom/bala#readme",
   "devDependencies": {
+    "babili": "^0.1.4",
     "npm-check-updates": "^2.11.3",
-    "uglify-js": "https://github.com/mishoo/UglifyJS2.git#harmony"
+    "uglify-js": "^3.0.27"
   }
 }

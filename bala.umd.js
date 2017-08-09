@@ -1,8 +1,6 @@
 {
 	let $ = ((document, s_querySelectorAll, $) => (
-	($ = (s, context, bala) => (
-		(bala = Object.create($.fn)),
-
+	($ = (s, context, bala=Object.create($.fn)) => (
 		s && bala.push( // if s is truly then push the following
 			...(s.dispatchEvent // if arg is node or window,
 				? [s] // then pass [s]
