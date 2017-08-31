@@ -3,12 +3,14 @@ bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury
 
 ### A function for elements selection in 251 ASCII chars
 
-**bala.js** is a function that allows you easily select elements on a web page and get rid of jQuery in most of cases.
+**bala.js** is a function that allows you to select elements on a web page and get rid of jQuery in most of cases. Think of it as `document.querySelectorAll` on steroids.
+
 ```js
 const buttons = $('.button');
 ```
 
-You can use it as a global variable on your page
+You can use it as a global variable
+
 ```html
 <script>
 $=((a,b,c)=>(c=(d,e,f=Object.create(c.fn))=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.fn=[],c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll");
@@ -34,13 +36,14 @@ And you can use it as a local variable in a script you make
 })(window, ((a,b,c)=>(c=(d,e,f=Object.create(c.fn))=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.fn=[],c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll"));
 ```
 
-Or install it via NPM
+The function is also published on NPM
+
 ```
-npm install --save balajs
+npm install balajs
 ```
 
 
-**bala.js** is inherited from ``Array.prototype`` which means it has the same set of methods as native array has.
+**bala.js** is inherited from ``Array.prototype`` which means it has the same set of methods as the native array has.
 
 <ul>
 	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a></li>
@@ -74,8 +77,10 @@ npm install --save balajs
 
 ## More features?
 
-### Different types support
+### Various types support
+
 **bala** accepts many kinds of first argument and converts everything into **bala** instance
+
 ```js
 $('.one, #two')
 $(document.querySelectorAll('.selector'));
@@ -85,7 +90,7 @@ $(jQuery('.selector'));
 $([document.querySelector('.one'), document.querySelector('.two')])
 ```
 
-That means when you make your own library (e. g. VanillaJS plugin) you can use **bala** in case if you don't know which arg type will be passed by a programmer.
+That means when you make your own library (VanillaJS "plugin") you can use **bala** in case if you don't know which arg type will be passed by a programmer.
 
 ```js
 const myCoolLibrary = (el) => {
@@ -95,6 +100,7 @@ const myCoolLibrary = (el) => {
 ```
 
 ### $.one
+
 Getting zero-indexed element in DOM libraries is annoying. **bala** has one little static method called ``$.one`` which selects only one element.
 
 ```js
@@ -103,7 +109,7 @@ $.one('.button');
 $('.button')[0];
 ```
 
-This function is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``) which means you can import **bala** nicely via module system.
+This function is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``). It means you can import **bala** nicely via module system.
 
 **AMD**
 ```js
