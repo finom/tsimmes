@@ -11,7 +11,7 @@ const buttons = $('.button');
 You can use it as a global variable on your page
 ```html
 <script>
-$=((a,b,c)=>(c=((d,e,f)=>(f=Object.create(c.fn),d&&f.push(...d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d),f)),c.fn=[],c.one=((a,b)=>c(a,b)[0]),c))(document,"querySelectorAll");
+$=((a,b,c)=>(c=(d,e,f=Object.create(c.fn))=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.fn=[],c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll");
 </script>
 ```
 
