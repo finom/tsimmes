@@ -159,7 +159,7 @@ const cells = $('<td>foo</td><td>bar</td>', 'tr')
 You can extend **bala** as easily as you do it with jQuery or Zepto. Use ``fn`` property to define your own plugin.
 
 ```js
-$.fn.toggle = (boolean) => {
+$.fn.toggle = function (boolean) {
     for(let node of this) {
         node.hidden = boolean;
     }
