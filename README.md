@@ -1,7 +1,7 @@
 bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
 ============
 
-### A function for elements selection in 251 ASCII chars (less than ⅛ KB)
+### A function for elements selection in 251 ASCII chars (less than ¼ KB)
 
 **bala.js** is a function that allows you to select elements on a web page and get rid of jQuery in most of cases. Think of it as of `document.querySelectorAll` on steroids.
 
