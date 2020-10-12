@@ -1,16 +1,16 @@
 declare module 'balajs' {
-  interface BalaPure {
+  interface Bala {
     (
-      element?: string | HTMLElement | HTMLElement[] | Node | Node[] | null, context?: string
+      element?: string | HTMLElement | HTMLElement[] | Node | Node[] | null, context?: string | HTMLElement
     ): HTMLElement[];
     one: (
-      element?: string | HTMLElement | HTMLElement[] | Node | Node[] | null, context?: string
+      element?: string | HTMLElement | HTMLElement[] | Node | Node[] | null, context?: string | HTMLElement
     ) => HTMLElement | undefined;
     // TODO how to define methods?
     fn: { [key: string]: (...args: any[]) => any }
   }
 
-  const $: BalaPure;
+  const $: Bala;
 
   export default $;
 }
