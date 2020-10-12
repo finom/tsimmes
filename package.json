@@ -8,7 +8,7 @@
     "minify": "rimraf bala.min.js bala.umd.min.js && babili src.js --out-file bala.min.js && babili bala.umd.js --out-file bala.umd.min.js",
     "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
     "generate-umd": "node tools/generateUmd",
-    "build": "npm run generate-umd && npm run minify && npm run minify-es5",
+    "build": "npm run generate-umd && npm run minify && npm run minify-es5 && ls -l bala.min.js",
     "upgrade": "ncu -a && npm install",
     "prepublish": "npm run build"
   },
