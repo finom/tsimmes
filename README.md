@@ -1,9 +1,9 @@
 bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
 ============
 
-### A function for elements selection in 251 ASCII chars (less than ¼ KB)
+### A function for elements selection in 251 ASCII chars (less than ¼ KB)!
 
-**bala.js** is a function that allows you to select elements on a web page and get rid of jQuery in most of cases. Think of it as `document.querySelectorAll` on steroids.
+**bala.js** is a function that allows you to select elements on a web page and get rid of jQuery in most of cases. Think of it as of `document.querySelectorAll` on steroids.
 
 ```js
 const buttons = $('.button');
@@ -159,7 +159,7 @@ const cells = $('<td>foo</td><td>bar</td>', 'tr')
 You can extend **bala** as easily as you do it with jQuery or Zepto. Use ``fn`` property to define your own plugin.
 
 ```js
-$.fn.toggle = (boolean) => {
+$.fn.toggle = function (boolean) {
     for(let node of this) {
         node.hidden = boolean;
     }
