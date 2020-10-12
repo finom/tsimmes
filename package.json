@@ -9,7 +9,7 @@
     "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
     "generate-umd": "node tools/generateUmd",
     "build": "npm run generate-umd && npm run minify && npm run minify-es5 && ls -l bala.min.js",
-    "upgrade": "ncu -a && npm install",
+    "upgrade": "ncu -u && npm install",
     "prepublish": "npm run build"
   },
   "repository": {
@@ -30,7 +30,8 @@
   "homepage": "https://github.com/finom/bala#readme",
   "devDependencies": {
     "babili": "^0.1.4",
-    "npm-check-updates": "^2.12.1",
-    "uglify-js": "^3.1.2"
+    "npm-check-updates": "^9.0.4",
+    "rimraf": "^3.0.2",
+    "uglify-js": "^3.11.2"
   }
 }
