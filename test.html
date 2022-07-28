@@ -82,15 +82,6 @@
 			$el.length == 2 && $el[0].tagName == 'TD' && $el[1].tagName == 'TD' ? ok() : fail();
 		});
 
-		it('Allows to create plugins', function(ok, fail) {
-			var $tgt = $('*');
-			$.fn.plugin = function() {
-				$tgt === this ? ok() : fail();
-			};
-
-			$tgt.plugin();
-		});
-
 		it('Little test for $.one', function(ok, fail) {
 			$.one('.test').className == 'test' ? ok() : fail();
 		});
@@ -98,7 +89,7 @@
 		it('Works with AMD', function(ok, fail) {
 			var timeout = setTimeout(fail, 1000);
 			require(['./bala.umd.js'], function($) {
-				if($.one) {
+				if($.one('.test').className == 'test') {
 					ok();
 					clearTimeout(timeout);
 				}

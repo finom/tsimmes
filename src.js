@@ -1,5 +1,5 @@
 $ = ((document, s_querySelectorAll, $) => (
-	($ = (s, context, bala=Object.create($.fn)) => (
+	($ = (s, context, bala=[]) => (
 		s && bala.push( // if s is truly then push the following
 			...(s.dispatchEvent // if arg is node or window,
 				? [s] // then pass [s]
@@ -17,8 +17,6 @@ $ = ((document, s_querySelectorAll, $) => (
 					: s)), // else guessing that s variable is array-like Object
         bala
 	)),
-
-	($.fn = []),
 
 	($.one = (s, context) => $(s, context)[0]),
 

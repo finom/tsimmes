@@ -1,9 +1,9 @@
 bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
 ============
 
-### A function for elements selection in 251 ASCII chars (less than ¼ KB)!
+### A function for elements selection in 226 ASCII chars (less than ¼ KB)!
 
-**bala.js** is a function that allows you to select elements on a web page and get rid of jQuery in most of cases. Think of it as of `document.querySelectorAll` on steroids.
+**bala.js** is a function that allows you to select elements on a web page. Think of it as of `document.querySelectorAll` on steroids.
 
 ```js
 const buttons = $('.button');
@@ -13,7 +13,7 @@ You can use it as a global variable
 
 ```html
 <script>
-$=((a,b,c)=>(c=(d,e,f=Object.create(c.fn))=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.fn=[],c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll");
+$=((a,b,c)=>(c=(d,e,f=[])=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll");
 </script>
 ```
 
@@ -33,7 +33,7 @@ And you can use it as a local variable in a script you make
     const divs = $('div');
     console.log(divs);
     // your code ends here
-})(window, ((a,b,c)=>(c=(d,e,f=Object.create(c.fn))=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.fn=[],c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll"));
+})(window, ((a,b,c)=>(c=(d,e,f=[])=>(d&&f.push(...(d.dispatchEvent?[d]:""+d===d?/</.test(d)?((e=a.createElement(e)).innerHTML=d,e.children):e?(e=c(e)[0])?e[b](d):f:a[b](d):d)),f),c.one=(a,b)=>c(a,b)[0],c))(document,"querySelectorAll"));
 ```
 
 The function is also published on NPM
@@ -79,7 +79,7 @@ npm install balajs
 
 ### Various types support
 
-**bala** accepts many kinds of first argument and converts everything into **bala** instance
+**bala** accepts many kinds of first argument and converts everything into array
 
 ```js
 $('.one, #two')
@@ -151,21 +151,6 @@ const div = $('<div><span class="yeah"></span></div>');
 In case if you need to parse HTML which contains contextual elements (``td``, ``tr``, ``option``) you can pass a context tag name as a second argument.
 ```js
 const cells = $('<td>foo</td><td>bar</td>', 'tr')
-```
-
-
-## Plugins
-
-You can extend **bala** as easily as you do it with jQuery or Zepto. Use ``fn`` property to define your own plugin.
-
-```js
-$.fn.toggle = function (boolean) {
-    for(let node of this) {
-        node.hidden = boolean;
-    }
-};
-
-$('.button').toggle(false); // hides all buttons
 ```
 
 ## I need more examples!
