@@ -1,6 +1,6 @@
 $ = (function(document, s_addEventListener, s_querySelectorAll) {
 	function $(s, context, bala) {
-		bala = Object.create($.fn);
+		bala = []
 
 		s && bala.push.apply(bala, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
@@ -20,8 +20,6 @@ $ = (function(document, s_addEventListener, s_querySelectorAll) {
 
 		return bala;
 	}
-
-	$.fn = [];
 
 	$.one = function(s, context) {
 		return $(s, context)[0] || null;
