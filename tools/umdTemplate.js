@@ -1,5 +1,5 @@
 {
-	let BALA_PLACEHODER
+	let tsimmes_PLACEHODER
 	
 	if (typeof define == 'function' && define.amd) {
 		define([], () => $);

@@ -1,5 +1,5 @@
-declare module 'balajs' {
-  interface Bala {
+declare module 'tsimmes' {
+  interface Tsimmes {
     (
       element?: string | HTMLElement | HTMLElement[] | Node | Node[] | null, context?: string | HTMLElement
     ): HTMLElement[];
@@ -8,7 +8,7 @@ declare module 'balajs' {
     ) => HTMLElement | undefined;
   }
 
-  const $: Bala;
+  const $: Tsimmes;
 
   export default $;
 }

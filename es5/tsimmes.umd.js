@@ -1,9 +1,9 @@
 (function(root, $) {
 	var $ = (function(document, s_addEventListener, s_querySelectorAll) {
-	function $(s, context, bala) {
-		bala = [];
+	function $(s, context, tsimmes) {
+		tsimmes = [];
 
-		s && bala.push.apply(bala, // if s is truly then push the following
+		s && tsimmes.push.apply(tsimmes, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
 				? [s] // then pass [s]
 				: "" + s === s // else if arg is a string
@@ -15,11 +15,11 @@
 						: context // else if context is truly
 							? ((context = $(context)[0]) // if context element is found
 								? context[s_querySelectorAll](s) // then select element from context
-								: bala) // else pass [] (context isn't found)
+								: tsimmes) // else pass [] (context isn't found)
 							: document[s_querySelectorAll](s) // else select elements globally
 					: s); // else guessing that s variable is array-like Object
 
-		return bala;
+		return tsimmes;
 	}
 
 	$.one = function(s, context) {

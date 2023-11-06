@@ -1,9 +1,9 @@
-bala.js [![npm version](https://badge.fury.io/js/balajs.svg)](https://badge.fury.io/js/balajs)
+tsimmes [![npm version](https://badge.fury.io/js/tsimmes.svg)](https://badge.fury.io/js/tsimmes)
 ============
 
 ### A function for elements selection in 226 ASCII chars (less than ¼ KB)!
 
-**bala.js** is a function that allows you to select elements on a web page. Think of it as of `document.querySelectorAll` on steroids.
+**tsimmes** is a function that allows you to select elements on a web page. Think of it as of `document.querySelectorAll` on steroids.
 
 ```js
 const buttons = $('.button');
@@ -39,11 +39,11 @@ And you can use it as a local variable in a script you make
 The function is also published on NPM
 
 ```
-npm install balajs
+npm install tsimmes
 ```
 
 
-**bala.js** is inherited from ``Array.prototype`` which means it has the same set of methods as the native array has.
+**tsimmes** is inherited from ``Array.prototype`` which means it has the same set of methods as the native array has.
 
 <ul>
 	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank">concat</a></li>
@@ -79,7 +79,7 @@ npm install balajs
 
 ### Various types support
 
-**bala** accepts many kinds of first argument and converts everything into array
+**tsimmes** accepts many kinds of first argument and converts everything into array
 
 ```js
 $('.one, #two')
@@ -90,7 +90,7 @@ $(jQuery('.selector'));
 $([document.querySelector('.one'), document.querySelector('.two')])
 ```
 
-That means when you make your own library (VanillaJS "plugin") you can use **bala** in case if you don't know which arg type will be passed by a programmer.
+That means when you make your own library (VanillaJS "plugin") you can use **tsimmes** in case if you don't know which arg type will be passed by a programmer.
 
 ```js
 const myCoolLibrary = (el) => {
@@ -101,7 +101,7 @@ const myCoolLibrary = (el) => {
 
 ### $.one
 
-Getting zero-indexed element in DOM libraries is annoying. **bala** has one little static method called ``$.one`` which selects only one element.
+Getting zero-indexed element in DOM libraries is annoying. **tsimmes** has one little static method called ``$.one`` which selects only one element.
 
 ```js
 $.one('.button');
@@ -109,28 +109,28 @@ $.one('.button');
 $('.button')[0];
 ```
 
-This function is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``). It means you can import **bala** nicely via module system.
+This function is also created to get rid of extra variables (usually DOM libraries make two vars: ``$$`` and ``$``). It means you can import **tsimmes** nicely via module system.
 
 **AMD**
 ```js
-require(['path/to/bala/umd/bala.umd.js'], ($) => {
+require(['path/to/tsimmes/umd/tsimmes.umd.js'], ($) => {
 	// ...
 });
 ```
 
 **CommonJS**
 ```js
-const $ = require('path/to/bala/bala.umd.js');
+const $ = require('path/to/tsimmes/tsimmes.umd.js');
 ```
 
 **CommonJS + NPM**
 ```js
-const $ = require('balajs');
+const $ = require('tsimmes');
 ```
 
 **ECMAScript 2015**
 ```js
-import $ from 'balajs';
+import $ from 'tsimmes';
 ```
 
 ### Find elements inside another element

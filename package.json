@@ -1,33 +1,32 @@
 {
-  "name": "balajs",
+  "name": "tsimmes",
   "version": "2.0.2",
   "description": "A function for elements selection",
-  "main": "./es5/bala.umd.js",
+  "main": "./es5/tsimmes.umd.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "rimraf bala.min.js bala.umd.min.js && babili src.js --out-file bala.min.js && babili bala.umd.js --out-file bala.umd.min.js",
-    "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/bala.min.js && uglifyjs --compress --mangle -- es5/bala.umd.js > es5/bala.umd.min.js",
-    "generate-umd": "node tools/generateUmd",
-    "build": "npm run generate-umd && npm run minify && npm run minify-es5 && ls -l bala.min.js",
+    "minify": "rimraf tsimmes.min.js tsimmes.umd.min.js && babili src.js --out-file tsimmes.min.js && babili tsimmes.umd.js --out-file tsimmes.umd.min.js",
+    "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/tsimmes.min.js && uglifyjs --compress --mangle -- es5/tsimmes.umd.js > es5/tsimmes.umd.min.js",
+    "build": "npm run generate-umd && npm run minify && npm run minify-es5 && ls -l tsimmes.min.js",
     "upgrade": "ncu -u && npm install",
-    "prepublish": "npm run build"
+    "patch": "npm version patch && npm run build && npm publish && git push && git push --tags"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finom/bala.git"
+    "url": "git+https://github.com/finom/tsimmes.git"
   },
   "keywords": [
     "jquery",
     "dom",
     "library",
-    "balalaika"
+    "tsimmes"
   ],
   "author": "Andrey Gubanov",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/finom/bala/issues"
+    "url": "https://github.com/finom/tsimmes/issues"
   },
-  "homepage": "https://github.com/finom/bala#readme",
+  "homepage": "https://github.com/finom/tsimmes#readme",
   "devDependencies": {
     "babili": "^0.1.4",
     "npm-check-updates": "^16.0.1",

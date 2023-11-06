@@ -1,5 +1,5 @@
 (function(root, $) {
-	var BALA_PLACEHODER;
+	var tsimmes_PLACEHODER;
 
 	if (typeof define == 'function' && define.amd) {
 		define([], function() {
