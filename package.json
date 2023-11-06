@@ -9,7 +9,7 @@
     "minify-es5": "uglifyjs --compress --mangle -- es5/src.js > es5/tsimmes.min.js && uglifyjs --compress --mangle -- es5/tsimmes.umd.js > es5/tsimmes.umd.min.js",
     "build": "npm run generate-umd && npm run minify && npm run minify-es5 && ls -l tsimmes.min.js",
     "upgrade": "ncu -u && npm install",
-    "patch": "npm version patch && npm run build && npm publish && git push && git push --tags",
+    "patch": "npm version patch && npm run build && git commit -am 'script: Build' && npm publish && git push && git push --tags",
     "generate-umd": "node tools/generateUmd"
   },
   "repository": {
