@@ -1,7 +1,7 @@
 (function(root, $) {
 	var $ = (function(document, s_addEventListener, s_querySelectorAll) {
 	function $(s, context, tsimmes) {
-		tsimmes = [];
+		tsimmes = []
 
 		s && tsimmes.push.apply(tsimmes, // if s is truly then push the following
 			s[s_addEventListener] // if arg is node or window,
