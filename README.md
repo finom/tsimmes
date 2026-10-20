@@ -5,7 +5,7 @@ tsimmes [![npm version](https://badge.fury.io/js/tsimmes.svg)](https://badge.fur
 <img src="https://github.com/finom/tsimmes/assets/1082083/ec10294f-9b8b-4af1-9f66-a5694bacdfb5" width="450">
 </p> -->
 
-### jQuery in 226 ASCII chars
+### "jQuery" in 226 ASCII chars
 
 **tsimmes** is a function that allows you to select elements on a web page. Think of it as of `document.querySelectorAll` on steroids.
 
